@@ -220,6 +220,14 @@ git log
 //  a command you will learn in the next exercise.
 
 ```
-![alt git checkout master](./merge1.jpg)
-![alt git merge bugFix](./merge2.jpg)
-![alt git checkout bugFix; git merge master](./merge3.jpg)
+
+git checkout master<br>
+![git checkout master](./merge1.jpg)
+
+<br>git merge bugFix<br>
+![git merge bugFix](./merge2.jpg)
+
+<br>git checkout bugFix<br>
+git merge master<br>
+
+![git checkout bugFix; git merge master](./merge3.jpg)
