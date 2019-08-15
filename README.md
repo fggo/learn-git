@@ -221,13 +221,8 @@ git log
 
 ```
 
-git checkout master<br>
-![git checkout master](./merge1.jpg)
+![git checkout master](merge1.jpg)
 
-<br>git merge bugFix<br>
-![git merge bugFix](./merge2.jpg)
+![git merge bugFix](merge2.jpg)
 
-<br>git checkout bugFix<br>
-git merge master<br>
-
-![git checkout bugFix; git merge master](./merge3.jpg)
+![git checkout bugFix; git merge master](merge3.jpg)
