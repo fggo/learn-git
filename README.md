@@ -221,8 +221,8 @@ git log
 
 ```
 
-![git checkout master](merge1.jpg)
+![git checkout master](https://github.com/fggo/learn-git/blob/master/merge1.JPG?raw=true)
 
-![git merge bugFix](merge2.jpg)
+![git merge bugFix](https://github.com/fggo/learn-git/blob/master/merge2.JPG?raw=true)
 
-![git checkout bugFix; git merge master](merge3.jpg)
+![git checkout bugFix; git merge master](https://github.com/fggo/learn-git/blob/master/merge3.JPG?raw=true)
