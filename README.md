@@ -1,27 +1,32 @@
 # learn-git
 For educational purpose only
 
+## download git
 ```commandline
+# on Windows : https://git-scm.com/download/win
+
 # on Linux (fedora, ubuntu)
 sudo dnf install git
 sudo apt install git
-
-# on Windows : https://git-scm.com/download/win
 ```
 
 ## fork
 ```commandline
-# fork a repository by clicking 'fork' from the owner's repo,
-# then a copy of the repo will be appear in your account
+# fork a repository by clicking 'fork' from the owner's repository
+# then a copy of the repo will appear in your Repositories.
 
-# now clone the forked repo
+# now clone the forked repo in git command line interface
 git clone https://github.com/fggo/Parking.git
-cd ./Parking  # now on (master)
+
+cd ./Parking # now on (master) branch
+
+# show the set of repositories ("remotes") whose branches you track.
 git remote -v
     origin  https://github.com/fggo/Parking.git (fetch)
     origin  https://github.com/fggo/Parking.git (push)
 
-# add upstream(original repository from the owner)
+# add new remote upstream repository (original repository from the owner),
+# which will be synced with the fork(copied repository).
 git remote add upstream https://github.com/YoonYeoSong/Parking.git
 git remote -v
     origin  https://github.com/fggo/Parking.git (fetch)
@@ -32,19 +37,19 @@ git remote -v
 git config --global user.name 'junholee'
 git config --global user.email 'jnuho@outlook.com'
 
-# fetch the changes from original repo and it will
-# store the changes in the branch 'upstream/master' of your forked repo
+# sync your fork by fetching the changes from original repo
+# it will store the changes into the 'upstream/master' branch of your forked repo
 git fetch upstream
 
-# merge the branch
+# merge into the master branch
 git checkout master
 git merge upstream/master
 
-# now push my changes to make my forked repo is up-to-date
+# push changes to make forked repository up-to-date
 # it only updates the forked repo(copy)
 git push origin master
 
-# now go to original repo,
+# now go to the original repo,
 # click pull request -> create pull request
 
 # now original owner of repo can confirm 'merge pull request'
@@ -73,8 +78,14 @@ git status # resolve merge conflict
 
 git commit -m 'merge test branch, junk/testbranch'
 git push
-
 ```
+
+![git checkout master](https://github.com/fggo/learn-git/blob/master/merge1.JPG?raw=true)
+
+![git merge bugFix](https://github.com/fggo/learn-git/blob/master/merge2.JPG?raw=true)
+
+![git checkout bugFix; git merge master](https://github.com/fggo/learn-git/blob/master/merge3.JPG?raw=true)
+
 
 REMOTE REPO 'origin' <-> LOCAL
 ```commandline
@@ -220,9 +231,3 @@ git log
 //  a command you will learn in the next exercise.
 
 ```
-
-![git checkout master](https://github.com/fggo/learn-git/blob/master/merge1.JPG?raw=true)
-
-![git merge bugFix](https://github.com/fggo/learn-git/blob/master/merge2.JPG?raw=true)
-
-![git checkout bugFix; git merge master](https://github.com/fggo/learn-git/blob/master/merge3.JPG?raw=true)
