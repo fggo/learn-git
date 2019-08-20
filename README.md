@@ -12,19 +12,27 @@ sudo apt install git
 
 ## fork
 ```commandline
-# fork a repository by clicking 'fork' from the owner's repository
-# then a copy of the repo will appear in your Repositories.
-
-# now clone the forked repo in git command line interface
+# Click 'fork' from the owner's repository, then a copy of the repo will appear in your Repositories.
+# clone the forked repo to your local directory
 git clone https://github.com/fggo/Parking.git
 
-cd ./Parking # now on (master) branch
+cd ./Parking # on (master) branch
 
-# show the set of repositories ("remotes") whose branches you track.
+# info to be displayed in commit history
+git config --global user.name 'YOUR_NAME'
+git config --global user.email 'YOUR_EMAIL'
+
+# In your local clone of your forked repository, you can add the original GitHub repository as a "remote".
+# "Remotes" are like nicknames for the URLs of repositories - origin is one, for example.
+# When a repo is cloned, it has a default remote called origin that points to your fork on GitHub,
+# not the original repo it was forked from. To keep track of the original repo,
+# you need to add another remote named upstream
+# show the set of tracked repositories ("remotes") whose branches you track.
 git remote -v
     origin  https://github.com/fggo/Parking.git (fetch)
     origin  https://github.com/fggo/Parking.git (push)
 
+# Manage the set of repositories ("remotes") whose branches you track.
 # add new remote upstream repository (original repository from the owner),
 # which will be synced with the fork(copied repository).
 git remote add upstream https://github.com/YoonYeoSong/Parking.git
@@ -34,10 +42,10 @@ git remote -v
     upstream  https://github.com/YoonYeoSong/Parking.git (fetch)
     upstream  https://github.com/YoonYeoSong/Parking.git (push)
 
-git config --global user.name 'junholee'
-git config --global user.email 'jnuho@outlook.com'
+git config --global user.name 'YOUR_NAME'
+git config --global user.email 'YOUR_EMAIL'
 
-# sync your fork by fetching the changes from original repo
+# Sync your fork by fetching the changes from original repo
 # it will store the changes into the 'upstream/master' branch of your forked repo
 git fetch upstream
 
@@ -63,6 +71,7 @@ git checkout junk/testbranch
 # changes made
 git add *
 git commit -m 'branch commit'
+
 git push origin junk/testbranch
 # remote branch name has been set as same 'junk/testbranch'
 # one can change different remote branch name
@@ -80,10 +89,37 @@ git commit -m 'merge test branch, junk/testbranch'
 git push
 ```
 
+# update branch from master branch
+```commandline
+git checkout wip/sat
+git merge master
+git push origin wip/sat
+```
+
+# fetch remote branch
+[fetch remote branch](https://stackoverflow.com/a/9537923/9122475)
+```commandline
+git branch
+* master
+
+git remote -r
+  ...
+  origin/wip/sat
+
+git checkout --track origin/wip/sat
+
+git branch
+  master
+* wip/sat
+```
+
+### git checkout master
 ![git checkout master](https://github.com/fggo/learn-git/blob/master/merge1.JPG?raw=true)
 
+### git merge bugFix
 ![git merge bugFix](https://github.com/fggo/learn-git/blob/master/merge2.JPG?raw=true)
 
+### git checkout bugFix, git merge master
 ![git checkout bugFix; git merge master](https://github.com/fggo/learn-git/blob/master/merge3.JPG?raw=true)
 
 
