@@ -89,11 +89,25 @@ git commit -m 'merge test branch, junk/testbranch'
 git push
 ```
 
+
 # update branch from master branch
 ```commandline
 git checkout wip/sat
 git merge master
 git push origin wip/sat
+```
+
+
+# Create remote (upstream) branch by pushing with -u
+```commandline
+git push origin 
+```
+
+# Make a branch track existing remote (upstream) branch
+[track existing remote branch](https://stackoverflow.com/a/2286030)
+```commandline
+git branch -u upstream/wip/sat
+git branch --set-upstream-to=upstream/wip/sat
 ```
 
 # fetch remote branch
