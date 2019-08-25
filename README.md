@@ -115,9 +115,27 @@ git branch --set-upstream-to=upstream/wip/sat
 # fetch remote branch
 [fetch remote branch](https://stackoverflow.com/a/9537923/9122475)
 ```commandline
-git branch
-* master
+git checkout wip/sat
+git config --list 
+# ...
+# branch.wip/sat.remote=origin
 
+git branch --set-upstream-to=upstream/wip/sat
+git config --list 
+# ...
+# branch.wip/sat.remote=upstream
+git pull
+# (wip/sat|MERGE) -> resolve conflicts manually
+
+git branch --set-upstream-to=origin/wip/sat
+git commit -m 'comments"
+git push -u origin wip/sat
+# make pull request to upstream remote!
+
+
+
+
+#---
 git remote -r
   ...
   origin/wip/sat
@@ -127,6 +145,9 @@ git checkout --track origin/wip/sat
 git branch
   master
 * wip/sat
+
+
+
 ```
 
 ### git checkout master
