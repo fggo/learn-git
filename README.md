@@ -101,10 +101,15 @@ git push origin wip/sat
 # Create remote (upstream) branch by pushing with -u
 push a new local branch to a remote Git repository and track it. 
 [update remote if remote branch is not showing up](https://stackoverflow.com/a/24827745)
+[push local branch to remote and track it](https://stackoverflow.com/a/1519032)
 ```commandline
 git remote update
 
-git push -u origin <branch>  # Git will set up the tracking information during the push.
+git push upstream wip/junho
+
+# Git will set up the tracking information during the push.
+git push -u origin <branch>
+>>>>>>> 225bd538190104ab6ee3d6b8da57f18d996cdb5f
 ```
 
 # Make a branch track existing remote (upstream) branch
