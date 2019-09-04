@@ -1,19 +1,19 @@
 # learn-git
-For educational purpose only
+This repository is for personal learning. Non-commital on a timeline.
 
-## download git
+
+## install git
 ```commandline
 # on Windows : https://git-scm.com/download/win
-
 # on Linux (fedora, ubuntu)
 sudo dnf install git
 sudo apt install git
 ```
 
-## fork
+## fork and contribute workflow
 ```commandline
 # Click 'fork' from the owner's repository, then a copy of the repo will appear in your Repositories.
-# clone the forked repo to your local directory
+# Clone the forked repo to your local directory
 git clone https://github.com/fggo/Parking.git
 
 cd ./Parking # on (master) branch
@@ -24,17 +24,14 @@ git config --global user.email 'YOUR_EMAIL'
 
 # In your local clone of your forked repository, you can add the original GitHub repository as a "remote".
 # "Remotes" are like nicknames for the URLs of repositories - origin is one, for example.
-# When a repo is cloned, it has a default remote called origin that points to your fork on GitHub,
-# not the original repo it was forked from. To keep track of the original repo,
-# you need to add another remote named upstream
-# show the set of tracked repositories ("remotes") whose branches you track.
-git remote -v
-    origin  https://github.com/fggo/Parking.git (fetch)
-    origin  https://github.com/fggo/Parking.git (push)
+# 1. origin :  default remote 'origin', once a repo is cloned, it points to your fork on GitHub,
+# not the original repo it was forked from.
 
+# To keep track of the original repo, you need to add another remote named upstream
 # Manage the set of repositories ("remotes") whose branches you track.
 # add new remote upstream repository (original repository from the owner),
 # which will be synced with the fork(copied repository).
+
 git remote add upstream https://github.com/YoonYeoSong/Parking.git
 git remote -v
     origin  https://github.com/fggo/Parking.git (fetch)
@@ -42,26 +39,19 @@ git remote -v
     upstream  https://github.com/YoonYeoSong/Parking.git (fetch)
     upstream  https://github.com/YoonYeoSong/Parking.git (push)
 
-git config --global user.name 'YOUR_NAME'
-git config --global user.email 'YOUR_EMAIL'
-
-# Sync your fork by fetching the changes from original repo
-# it will store the changes into the 'upstream/master' branch of your forked repo
-git fetch upstream
-
-# merge into the master branch
-git checkout master
-git merge upstream/master
-
-# push changes to make forked repository up-to-date
-# it only updates the forked repo(copy)
+# Sync your fork by git fork (or git pull) changes from original repo (upstream)
+# push changes to make forked repository up-to-date it only updates the forked repo(copy)
+git pull upstream master
 git push origin master
+
 
 # now go to the original repo,
 # click pull request -> create pull request
-
 # now original owner of repo can confirm 'merge pull request'
 # ALL DONE!
+
+git push --delete origin <branchname>
+git push --delete upstream <branchname>
 ```
 
 ## branching
