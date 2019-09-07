@@ -1,8 +1,7 @@
-# learn-git
-This repository is for personal learning. Non-commital on a timeline.
+# About
+This document contains git workflows that I often use. I'm still learning so it might contain incorrect information. Non-commital on a timeline.
 
-
-## install git
+## Install git
 ```commandline
 # on Windows : https://git-scm.com/download/win
 # on Linux (fedora, ubuntu)
@@ -10,23 +9,22 @@ sudo dnf install git
 sudo apt install git
 ```
 
-## fork and contribute workflow
+## Fork
 ```commandline
-# Click 'fork' from the owner's repository, then a copy of the repo will appear in your Repositories.
+# Click 'fork' from the owner's repository, then a copy of the repo will appear in your Repository.
 # Clone the forked repo to your local directory
-git clone https://github.com/fggo/Parking.git
+git clone https://github.com/fggo/myproject.git
 
-cd ./Parking # on (master) branch
+cd myproject # on (master) branch
 
-# info to be displayed in commit history
+# set config info
 git config --global user.name 'YOUR_NAME'
 git config --global user.email 'YOUR_EMAIL'
 
 # In your local clone of your forked repository, you can add the original GitHub repository as a "remote".
 # "Remotes" are like nicknames for the URLs of repositories - origin is one, for example.
-# 1. origin :  default remote 'origin', once a repo is cloned, it points to your fork on GitHub,
+# origin :  default remote 'origin', once a repo is cloned, it points to your fork on GitHub,
 # not the original repo it was forked from.
-
 # To keep track of the original repo, you need to add another remote named upstream
 # Manage the set of repositories ("remotes") whose branches you track.
 # add new remote upstream repository (original repository from the owner),
@@ -62,7 +60,7 @@ git checkout junk/testbranch
 git add *
 git commit -m 'branch commit'
 
-git push origin junk/testbranch
+git push -u origin junk/testbranch
 # remote branch name has been set as same 'junk/testbranch'
 # one can change different remote branch name
 # git push origin local-branch-name:remote-branch-name
